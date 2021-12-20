@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:practica/resources/text.dart';
+import 'package:practica/resources/textStyle.dart';
+import 'package:practica/widjet_ui/about.dart';
+import 'package:practica/widjet_ui/advantages.dart';
+import 'package:practica/widjet_ui/hellowsaidbar.dart';
 // import 'package:practica/resources/text.dart';
 import 'package:practica/widjet_ui/nav_bar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-
 
   final String title;
 
@@ -14,44 +17,47 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
-
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Center(
-
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
+          color: Colors.black,
+          height: height,
+          width: width,
+          child: Stack(
+            children: [
+              ListView(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                          width: width,
+                          height: 660,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('source/main-screen__bgc.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Center(
+                              child: Text(
+                            firstCoursesTxt,
+                            style: firstCoursesTxtStyle,
+                          ))),
+                      const HelloSidBar(),
+                      const AboutMain(),
+                      const advantagesMain(),
+                    ],
+                  ),
+                ],
+              ),
               const MainNavBar(),
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
             ],
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          )),
     );
   }
 }
