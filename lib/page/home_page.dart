@@ -4,8 +4,11 @@ import 'package:practica/resources/textStyle.dart';
 import 'package:practica/widjet_ui/about.dart';
 import 'package:practica/widjet_ui/advantages.dart';
 import 'package:practica/widjet_ui/hellowsaidbar.dart';
+import 'package:practica/widjet_ui/nabBloc.dart';
 // import 'package:practica/resources/text.dart';
 import 'package:practica/widjet_ui/nav_bar.dart';
+import 'package:practica/widjet_ui/partnersMain.dart';
+import 'package:practica/widjet_ui/timetableMain.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -27,35 +30,19 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.black,
           height: height,
           width: width,
-          child: Stack(
+          child: ListView(
             children: [
-              ListView(
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                          width: width,
-                          height: 660,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('source/main-screen__bgc.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Center(
-                              child: Text(
-                            firstCoursesTxt,
-                            style: firstCoursesTxtStyle,
-                          ))),
-                      const HelloSidBar(),
-                      const AboutMain(),
-                      const advantagesMain(),
-                    ],
-                  ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const <Widget>[
+                  NavBlock(),
+                  HelloSidBar(),
+                  AboutMain(),
+                  AdvantagesMain(),
+                  PartnersMain(),
+                  TimetableMain(),
                 ],
               ),
-              const MainNavBar(),
             ],
           )),
     );

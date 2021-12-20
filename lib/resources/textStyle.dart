@@ -26,13 +26,13 @@ TextStyle memberTxtStyle = const TextStyle(
 );
 
 TextStyle whatAreWeDoingTxtStyle = const TextStyle(
-  color: Color(0x99FFFFFF),
+  color: Color(0xffFFFFFF),
   fontSize: 48,
   fontWeight: FontWeight.w700,
 );
 
 TextStyle loremTxtStyle = const TextStyle(
-  color: Color(0x99FFFFFF),
+  color: Color(0xaaFFFFFF),
   fontSize: 16,
   fontWeight: FontWeight.w400,
 );

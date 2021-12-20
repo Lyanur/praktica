@@ -9,32 +9,38 @@ class AboutMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           Expanded(child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 60.0),
             child: Image.asset('source/aboutimg.png'),
           )),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    whatAreWeDoingTxt,
-                    style: whatAreWeDoingTxtStyle,
-                  ),
-                  const SizedBox(
-                    height: 45,
-                  ),
-                  Text(
-                    loremTxt,
-                    style: loremTxtStyle,
-                  ),
-                ],
+              child: SizedBox(
+                width: 600,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      whatAreWeDoingTxt,
+                      style: whatAreWeDoingTxtStyle,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(
+                      height: 45,
+                    ),
+                    Center(
+                      child: Text(
+                        loremTxt,
+                        style: loremTxtStyle,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )

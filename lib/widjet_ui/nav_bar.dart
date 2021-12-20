@@ -25,14 +25,6 @@ class MainNavBar extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(courses, style: st.logoStyle),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(schedule, style: st.logoStyle),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
                     child: Text(teachersTxt, style: st.logoStyle),
                   ),
                   Padding(
